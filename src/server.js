@@ -4,7 +4,7 @@ const express = require('express');
 const todos = [{ id: 1, text: 'Todo 1' }];
 
 const app = express();
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 app.use(express.static(path.join(__dirname, '../public')));
 
