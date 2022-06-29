@@ -21,6 +21,23 @@ app.post('/todos', (req, res) => {
   res.json(todo);
 });
 
+app.patch('/todos/:id', (req, res) => {
+  const todo = todos.find((currentTodo) => (
+    currentTodo.id === global.parseInt(req.params.id)
+  ));
+
+  if (!todo) {
+    res.status(404).send('Not found');
+
+    return;
+  }
+
+  // eslint-disable-next-line no-unused-expressions
+  todo.text === req.body.text;
+
+  res.json(todo);
+});
+
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
 });
