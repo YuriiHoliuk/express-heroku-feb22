@@ -33,7 +33,7 @@ app.patch('/todos/:id', (req, res) => {
   }
 
   // eslint-disable-next-line no-unused-expressions
-  todo.text === req.body.text;
+  todo.text = req.body.text;
 
   res.json(todo);
 });
